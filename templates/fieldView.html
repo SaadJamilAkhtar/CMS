@@ -1,0 +1,46 @@
+{% extends "Main.html" %}
+{% block title %}
+    Dashboard
+{% endblock %}
+
+
+{% block body %}
+    <div class="page-heading">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>Fields</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="card">
+                <div class="card-header">
+                    add here later
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                        <tr>
+                            <th>Display name</th>
+                            <th>Edit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for field in fields %}
+                            <tr>
+                                <td><a>{{ field.field_name }}</a></td>
+                                <td><a href="{% url 'edit-field' field.id %}" class="btn btn-secondary">Edit</a></td>
+                            </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "Main.html" %}
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+{% endblock %}
+
+
+{% block body %}
+    <div class="page-heading">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>{{ title }}</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="card">
+                <div class="card-header">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-5">{{ form }}</div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                        <tr>
+                            <th>Display name</th>
+                            <th>Job</th>
+                            <th>Title</th>
+                            <th>Company</th>
+                            <th>Department</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if clients %}
+                            {% for client in clients %}
+                                <tr>
+                                    <td><a href="{% url 'client' client.id %}">{{ client.Display_name }}</a></td>
+                                    <td>{{ client.Job }}</td>
+                                    <td>{{ client.Title }}</td>
+                                    <td>{{ client.Company }}</td>
+                                    <td>{{ client.Department }}</td>
+                                    <td><a href="{% url 'edit' client.id %}" class="btn btn-secondary">Edit</a></td>
+                                    <td><a onclick="return confirm('Are you sure you want to delete this?')" href="{% url 'delete' client.id %}" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {% if clients.has_other_pages %}
+                <ul class="pagination">
+                    {% if clients.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ clients.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled page-item"><span class="page-link" >&laquo;</span></li>
+                    {% endif %}
+                    {% for i in clients.paginator.page_range %}
+                        {% if clients.number == i %}
+                            <li class="active page-item"><span class="page-link" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if clients.has_next %}
+                        <li class="page-item"><a class="page-link"  href="?page={{ clients.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                        <li class="disabled page-item"><span class="page-link" >&raquo;</span></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+    $(document).ready(function () {
+    $('select').selectpicker();
+    })
+
+{% endblock %}

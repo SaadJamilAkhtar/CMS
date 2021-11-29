@@ -1,0 +1,80 @@
+{% extends 'Main.html' %}
+{% load static %}
+
+
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="{% static 'vendors/toastify/toastify.css' %}">
+{% endblock %}
+{% block body %}
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">{{ description }}</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form" method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                {% if form2 %}
+                                    {{ form2.as_p }}
+                                {% endif %}
+                                <br>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button type="submit" class="btn-lg btn-primary me-1 mb-1">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    $(document).ready(function () {
+
+    {% if form.errors %}
+        {% for error in form.non_field_errors %}
+
+            Toastify({
+            text: "{{ error }}",
+            duration: 3000,
+            close:true,
+            gravity:"top",
+            position: "center",
+            backgroundColor: "#FF3333",
+            }).showToast();
+        {% endfor %}
+    {% endif %}
+
+
+    $('input').addClass('form-control');
+    $('textarea').addClass('form-control');
+    $('select').addClass('selectpicker');
+    $('select').attr('data-live-search', 'true');
+    $('#id_Birthday').get(0).type = 'date';
+    $('select').selectpicker();
+    })
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'vendors/toastify/toastify.js' %}"></script>
+    <script src="{% static 'js/extensions/toastify.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

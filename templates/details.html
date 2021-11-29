@@ -1,0 +1,366 @@
+{% extends 'Main.html' %}
+
+{% block title %}
+    Details
+{% endblock %}
+
+{% block css %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Details</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><h2>Info</h2></th>
+                            <th><h2>Data</h2></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><b>Display Name</b></td>
+                            <td>{{ client.Display_name }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Prefix</b></td>
+                            <td>{{ client.Prefix }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>First</b></td>
+                            <td>{{ client.First }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Middle</b></td>
+                            <td>{{ client.Middle }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Suffix</b></td>
+                            <td>{{ client.Suffix }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Nickname</b></td>
+                            <td>{{ client.Nickname }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Job</b></td>
+                            <td>{{ client.Job }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Title</b></td>
+                            <td>{{ client.Title }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Company</b></td>
+                            <td>{{ client.Company }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Department</b></td>
+                            <td>{{ client.Department }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Business Phone</b></td>
+                            <td>{{ client.Business_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Car Exchange Phone</b></td>
+                            <td>{{ client.Car_Exchange_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Cell Phone</b></td>
+                            <td>{{ client.Cell_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Direct Phone</b></td>
+                            <td>{{ client.Direct_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Direct Phone 2</b></td>
+                            <td>{{ client.Direct_Phone2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fax Phone</b></td>
+                            <td>{{ client.Fax_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Phone</b></td>
+                            <td>{{ client.Home_Phone }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Home Phone 2</b></td>
+                            <td>{{ client.Home_Phone2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Fax Phone</b></td>
+                            <td>{{ client.Home_Fax_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>IPhone Phone</b></td>
+                            <td>{{ client.IPhone_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Main Phone</b></td>
+                            <td>{{ client.Main_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Mobile Phone</b></td>
+                            <td>{{ client.Mobile_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Mobile Phone 2</b></td>
+                            <td>{{ client.Mobile_Phone2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Mobile Phone 3</b></td>
+                            <td>{{ client.Mobile_Phone3 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>None Phone</b></td>
+                            <td>{{ client.None_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Office Phone</b></td>
+                            <td>{{ client.Office_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Phone</b></td>
+                            <td>{{ client.Other_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Phone 2</b></td>
+                            <td>{{ client.Other_Phone2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Phone 3</b></td>
+                            <td>{{ client.Other_Phone3 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Fax Phone</b></td>
+                            <td>{{ client.Other_Fax_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tel Phone</b></td>
+                            <td>{{ client.Tel_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Trading Phone</b></td>
+                            <td>{{ client.Trading_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work Phone</b></td>
+                            <td>{{ client.Work_Phone }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work Phone 2</b></td>
+                            <td>{{ client.Work_Phone2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work Fax Phone</b></td>
+                            <td>{{ client.Work_Fax_Phone }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Direct Email</b></td>
+                            <td>{{ client.Direct_Email }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Email Email</b></td>
+                            <td>{{ client.Email_Email }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Email</b></td>
+                            <td>{{ client.Home_Email }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>None Email</b></td>
+                            <td>{{ client.None_Email }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>None Email2</b></td>
+                            <td>{{ client.None_Email2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Email</b></td>
+                            <td>{{ client.Other_Email }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other Email2</b></td>
+                            <td>{{ client.Other_Email2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Personal Email</b></td>
+                            <td>{{ client.Personal_Email }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Work Email</b></td>
+                            <td>{{ client.Work_Email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Work Email(2)</td>
+                            <td>{{ client.Work_Email2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>Work Email(3)</td>
+                            <td>{{ client.Work_Email3 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home address</b></td>
+                            <td>{{ client.Home_address }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Street</b></td>
+                            <td>{{ client.Home_Street }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home City</b></td>
+                            <td>{{ client.Home_City }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home ZIP</b></td>
+                            <td>{{ client.Home_ZIP }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home State</b></td>
+                            <td>{{ client.Home_State }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Country</b></td>
+                            <td>{{ client.Home_Country }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Other Address</b></td>
+                            <td>{{ client.Other_Address }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other_Street</b></td>
+                            <td>{{ client.Other_Street }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other_City</b></td>
+                            <td>{{ client.Other_City }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other_ZIP</b></td>
+                            <td>{{ client.Other_ZIP }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Other_State</b></td>
+                            <td>{{ client.Other_State }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_Address</b></td>
+                            <td>{{ client.Work_Address }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_Street</b></td>
+                            <td>{{ client.Work_Street }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_City</b></td>
+                            <td>{{ client.Work_City }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_ZIP</b></td>
+                            <td>{{ client.Work_ZIP }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_State</b></td>
+                            <td>{{ client.Work_State }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_Country</b></td>
+                            <td>{{ client.Work_Country }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Work_Address2</b></td>
+                            <td>{{ client.Work_Address2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_Street2</b></td>
+                            <td>{{ client.Work_Street2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_City2</b></td>
+                            <td>{{ client.Work_City2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_ZIP2</b></td>
+                            <td>{{ client.Work_ZIP2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_State2</b></td>
+                            <td>{{ client.Work_State2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Work_Country2</b></td>
+                            <td>{{ client.Work_Country2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Birthday</b></td>
+                            <td>{{ client.Birthday }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Note</b></td>
+                            <td>{{ client.Note }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Group</b></td>
+                            <td>{{ client.getGroup }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Creation</b></td>
+                            <td>{{ client.Creation }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Modification</b></td>
+                            <td>{{ client.Modification }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>UID</b></td>
+                            <td>{{ client.UID }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Contact_Type</b></td>
+                            <td>{{ client.Contact_Type }}</td>
+                        </tr>
+                        {% if data %}
+                            {% for entry in data %}
+                                <tr>
+                                    <td><b>{{ entry.field.first.field_name }}</b></td>
+                                    <td>{{ entry.value }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

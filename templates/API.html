@@ -1,0 +1,47 @@
+{% extends 'Main.html' %}
+
+{% block title %}
+    API
+{% endblock %}
+
+{% block body %}
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">API KEY</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    {% if key %}
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-2">
+                                <h3>Key : </h3>
+                            </div>
+                            <div class="col-7">
+                                {{ key }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr>
+                            <div class="col-12 text-center">
+                                <form action="{% url 'delApiKey' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete Key</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    {% else %}
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Generate Key</button>
+                        </form>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
