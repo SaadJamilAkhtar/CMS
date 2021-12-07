@@ -114,12 +114,10 @@ def edit(request, id):
             return redirect(reverse('dashboard'))
     else:
         extra_data = ConnectedData.objects.filter(client=client)
-        print(extra_data)
         form = ClientForm(instance=client)
         initial = {}
         for field in extra_data:
             initial[field.field.all()[0].field_name] = field.value
-        print(initial)
         form2 = ExtraFieldForm(initial=initial)
         data = {
             'form': form,

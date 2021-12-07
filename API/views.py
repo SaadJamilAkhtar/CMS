@@ -12,5 +12,9 @@ class ClientView(APIView):
 
     def get(self, request):
         clients = Client.objects.all()
+        data = ConnectedData.objects.all()
         serializer = ClientSerializer(clients, many=True)
+
         return Response(serializer.data)
+
+

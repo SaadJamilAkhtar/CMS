@@ -90,6 +90,12 @@ class Client(models.Model):
 class APIKEY(models.Model):
     key = models.CharField(max_length=500, blank=False, null=False)
 
+    def __str__(self):
+        return self.key
+
+    class Meta:
+        verbose_name_plural = "My API Keys"
+
 
 class Group(models.Model):
     name = models.CharField(max_length=500)
@@ -104,6 +110,9 @@ class ExtraFields(models.Model):
     def __str__(self):
         return self.field_name
 
+    class Meta:
+        verbose_name_plural = 'Extra Fields'
+
 
 class ConnectedData(models.Model):
     field = models.ManyToManyField(ExtraFields, null=True, blank=True)
@@ -115,3 +124,6 @@ class ConnectedData(models.Model):
 
     def __repr__(self):
         return self.__str__()
+
+    class Meta:
+        verbose_name_plural = "Connected Data Entries"
