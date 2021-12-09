@@ -40,6 +40,7 @@ urlpatterns = [
                   path('addField', addNewField, name='add_field'),
                   path('editField/<int:id>', editExtraField, name='edit-field'),
                   path('fields', showAllFields, name='fields'),
+                  path('fields/delete/<int:id>', deleteExtraField, name='del-field'),
 
                   path('test', form_renderer)
 

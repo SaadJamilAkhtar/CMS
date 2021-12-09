@@ -117,10 +117,13 @@ class ExtraFields(models.Model):
 class ConnectedData(models.Model):
     field = models.ManyToManyField(ExtraFields, null=True, blank=True)
     client = models.ManyToManyField(Client)
-    value = models.TextField()
+    value = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return str(self.client.all()[0]) + " " + self.field.all()[0].field_name + " " + self.value
+        try:
+            return str(self.client.all()[0]) + " | " + self.field.all()[0].field_name + " | " + self.value
+        except:
+            return super().__str__()
 
     def __repr__(self):
         return self.__str__()

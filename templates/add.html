@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'vendors/sweetalert2/sweetalert2.min.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
@@ -15,6 +16,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="{% static 'vendors/toastify/toastify.css' %}">
+
+    <style>
+        .bg-change {
+            background-color: #eeeeee;
+        }
+    </style>
 {% endblock %}
 {% block body %}
     <section id="multiple-column-form">
@@ -26,7 +33,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post">
+                            <form class="form" method="post" id="formId">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 {% if form2 %}
@@ -34,7 +41,8 @@
                                 {% endif %}
                                 <br>
                                 <div class="col-6 d-flex justify-content-end">
-                                    <button type="submit" class="btn-lg btn-primary me-1 mb-1">Submit</button>
+                                    <button type="submit" class="btn-lg btn-primary me-1 mb-1" id="submitbutton">Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -64,17 +72,61 @@
 
 
     $('input').addClass('form-control');
+    $('#id_Middle').addClass('bg-change');
+    $('#id_Prefix').addClass('bg-change');
+    $('#id_Suffix').addClass('bg-change');
+    $('#id_Job').addClass('bg-change');
+    $('#id_Company').addClass('bg-change');
+    $('#id_Business_Phone').addClass('bg-change');
+    $('#id_Cell_Phone').addClass('bg-change');
+    $('#id_Direct_Phone2').addClass('bg-change');
+    $('#id_Home_Phone').addClass('bg-change');
+    $('#id_Home_Fax_Phone').addClass('bg-change');
+    $('#id_Main_Phone').addClass('bg-change');
+    $('#id_Mobile_Phone2').addClass('bg-change');
+    $('#id_None_Phone').addClass('bg-change');
+    $('#id_Other_Phone').addClass('bg-change');
+    $('#id_Other_Phone3').addClass('bg-change');
+    $('#id_Tel_Phone').addClass('bg-change');
+    $('#id_Work_Phone').addClass('bg-change');
+    $('#id_Work_Fax_Phone').addClass('bg-change');
+    $('#id_Email_Email').addClass('bg-change');
+    $('#id_None_Email').addClass('bg-change');
+    $('#id_Other_Email').addClass('bg-change');
+    $('#id_Personal_Email').addClass('bg-change');
+    $('#id_Work_Email2').addClass('bg-change');
+    $('#id_Home_address').addClass('bg-change');
+    $('#id_Home_City').addClass('bg-change');
+    $('#id_Home_State').addClass('bg-change');
+    $('#id_Other_Address').addClass('bg-change');
+    $('#id_Other_City').addClass('bg-change');
+    $('#id_Other_State').addClass('bg-change');
+    $('#id_Work_Street').addClass('bg-change');
+    $('#id_Work_ZIP').addClass('bg-change');
+    $('#id_Work_Country').addClass('bg-change');
+    $('#id_Work_Street2').addClass('bg-change');
+    $('#id_Work_ZIP2').addClass('bg-change');
+    $('#id_Work_Country2').addClass('bg-change');
+    $('#id_Note').addClass('bg-change');
+    $('#id_Creation').addClass('bg-change');
+    $('#id_UID').addClass('bg-change');
+
     $('textarea').addClass('form-control');
     $('select').addClass('selectpicker');
     $('select').attr('data-live-search', 'true');
     $('#id_Birthday').get(0).type = 'date';
     $('select').selectpicker();
+
+
     })
 {% endblock %}
 
 {% block javascript %}
     <script src="{% static 'vendors/toastify/toastify.js' %}"></script>
     <script src="{% static 'js/extensions/toastify.js' %}"></script>
+    <script src="{% static 'js/extensions/sweetalert2.js' %}"></script>
+    <script src="{% static 'vendors/sweetalert2/sweetalert2.all.min.js' %}"></script>
 
     <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
+

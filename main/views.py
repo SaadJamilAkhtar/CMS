@@ -29,7 +29,7 @@ def dashboard(request):
             data = {
                 'form': filterForm,
                 'clients': clients,
-                'title': "Clients"
+                'title_main': "Client Records"
             }
             return render(request, 'database.html', data)
 
@@ -49,7 +49,9 @@ def dashboard(request):
     data = {
         "clients": clients,
         'form': filterForm,
-        'title': 'Clients'
+        'title': 'Clients',
+        'del': request.GET.get('del'),
+        'success': request.GET.get('success')
     }
     return render(request, 'database.html', data)
 
@@ -86,7 +88,7 @@ def add(request):
                 obj.client.add(user)
                 obj.value = form_data[entry]
                 obj.save()
-            return redirect('dashboard')
+            return redirect(f"{reverse('dashboard')}?success=True")
     form = ClientForm()
     form2 = ExtraFieldForm()
     data = {
@@ -111,7 +113,7 @@ def edit(request, id):
                 obj = ConnectedData.objects.get(client=user, field__field_name=entry)
                 obj.value = form_data[entry]
                 obj.save()
-            return redirect(reverse('dashboard'))
+            return redirect(f"{reverse('dashboard')}?success=True")
     else:
         extra_data = ConnectedData.objects.filter(client=client)
         form = ClientForm(instance=client)
@@ -132,7 +134,7 @@ def edit(request, id):
 def delete(request, id):
     client = Client.objects.get(id=id)
     client.delete()
-    return redirect(reverse('dashboard'))
+    return redirect(f"{reverse('dashboard')}?del=True")
 
 
 @login_required()
@@ -169,7 +171,7 @@ def addGroup(request):
         form = GroupForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse('groups'))
+            return redirect(f"{reverse('groups')}?success=True")
     form = GroupForm()
     data = {
         'form': form,
@@ -186,7 +188,7 @@ def editGroup(request, id):
         form = GroupForm(request.POST, instance=group)
         if form.is_valid():
             form.save()
-            return redirect(reverse('groups'))
+            return redirect(f"{reverse('groups')}?success=True")
     else:
         form = GroupForm(instance=group)
         data = {
@@ -201,7 +203,9 @@ def editGroup(request, id):
 def groupView(request):
     groups = Group.objects.all()
     data = {
-        'groups': groups
+        'groups': groups,
+        'del': request.GET.get('del'),
+        'success': request.GET.get('success')
     }
 
     return render(request, 'groupView.html', data)
@@ -211,7 +215,7 @@ def groupView(request):
 def deleteGroup(request, id):
     client = Group.objects.get(id=id)
     client.delete()
-    return redirect(reverse('groups'))
+    return redirect(f"{reverse('groups')}?del=True")
 
 
 # remove this later
@@ -233,7 +237,7 @@ def addNewField(request):
                 temp.field.add(field)
                 temp.client.add(customer)
                 temp.save()
-            return redirect(reverse('fields'))
+            return redirect(f"{reverse('fields')}?success=True")
     form = NewFieldForm()
     data = {
         'form': form,
@@ -247,7 +251,9 @@ def addNewField(request):
 def showAllFields(request):
     fields = ExtraFields.objects.all()
     data = {
-        'fields': fields
+        'fields': fields,
+        'del': request.GET.get('del'),
+        'success': request.GET.get('success')
     }
     return render(request, 'fieldView.html', data)
 
@@ -259,7 +265,7 @@ def editExtraField(request, id):
         form = NewFieldForm(request.POST, instance=field)
         if form.is_valid():
             form.save()
-        return redirect(reverse('fields'))
+        return redirect(f"{reverse('fields')}?success=True")
     form = NewFieldForm(instance=field)
     data = {
         'form': form,
@@ -267,3 +273,12 @@ def editExtraField(request, id):
         'description': "Edit Field"
     }
     return render(request, 'add.html', data)
+
+
+def deleteExtraField(request, id):
+    field = ExtraFields.objects.get(id=id)
+    data = ConnectedData.objects.filter(field=field)
+    for data_ in data:
+        data_.delete()
+    field.delete()
+    return redirect(f"{reverse('fields')}?del=True")

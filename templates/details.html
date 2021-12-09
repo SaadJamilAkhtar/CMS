@@ -20,7 +20,7 @@
 
             <div class="card-body">
                 <div class="row">
-                    <table>
+                    <table class="table table-striped">
                         <thead>
                         <tr>
                             <th><h5>Attributes</h5></th>
@@ -30,327 +30,707 @@
                         <tbody>
                         <tr>
                             <td><b>Display Name</b></td>
-                            <td>{{ client.Display_name }}</td>
+                            {% if client.Display_name %}
+                                <td>{{ client.Display_name }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Prefix</b></td>
-                            <td>{{ client.Prefix }}</td>
+
+                            {% if client.Prefix %}
+                                <td>{{ client.Prefix }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>First</b></td>
-                            <td>{{ client.First }}</td>
+
+                            {% if client.First %}
+                                <td>{{ client.First }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Middle</b></td>
-                            <td>{{ client.Middle }}</td>
+
+                            {% if client.Middle %}
+                                <td>{{ client.Middle }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Suffix</b></td>
-                            <td>{{ client.Suffix }}</td>
+
+                            {% if client.Suffix %}
+                                <td>{{ client.Suffix }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
                             <td><b>Nickname</b></td>
-                            <td>{{ client.Nickname }}</td>
+
+                            {% if client.Nickname %}
+                                <td>{{ client.Nickname }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Job</b></td>
-                            <td>{{ client.Job }}</td>
+
+                            {% if client.Job %}
+                                <td>{{ client.Job }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Title</b></td>
-                            <td>{{ client.Title }}</td>
+
+                            {% if client.Title %}
+                                <td>{{ client.Title }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Company</b></td>
-                            <td>{{ client.Company }}</td>
+
+                            {% if client.Company %}
+                                <td>{{ client.Company }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Department</b></td>
-                            <td>{{ client.Department }}</td>
+
+                            {% if client.Department %}
+                                <td>{{ client.Department }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Business Phone</b></td>
-                            <td>{{ client.Business_Phone }}</td>
+
+                            {% if client.Business_Phone %}
+                                <td>{{ client.Business_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Car Exchange Phone</b></td>
-                            <td>{{ client.Car_Exchange_Phone }}</td>
+
+                            {% if client.Car_Exchange_Phone %}
+                                <td>{{ client.Car_Exchange_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Cell Phone</b></td>
-                            <td>{{ client.Cell_Phone }}</td>
+
+                            {% if client.Cell_Phone %}
+                                <td>{{ client.Cell_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Direct Phone</b></td>
-                            <td>{{ client.Direct_Phone }}</td>
+
+                            {% if client.Direct_Phone %}
+                                <td>{{ client.Direct_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Direct Phone 2</b></td>
-                            <td>{{ client.Direct_Phone2 }}</td>
+
+                            {% if client.Direct_Phone2 %}
+                                <td>{{ client.Direct_Phone2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Fax Phone</b></td>
-                            <td>{{ client.Fax_Phone }}</td>
+
+                            {% if client.Fax_Phone %}
+                                <td>{{ client.Fax_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home Phone</b></td>
-                            <td>{{ client.Home_Phone }}</td>
+
+                            {% if client.Home_Phone %}
+                                <td>{{ client.Home_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
                         <tr>
                             <td><b>Home Phone 2</b></td>
-                            <td>{{ client.Home_Phone2 }}</td>
+
+                            {% if client.Home_Phone2 %}
+                                <td>{{ client.Home_Phone2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home Fax Phone</b></td>
-                            <td>{{ client.Home_Fax_Phone }}</td>
+
+                            {% if client.Home_Fax_Phone %}
+                                <td>{{ client.Home_Fax_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>IPhone Phone</b></td>
-                            <td>{{ client.IPhone_Phone }}</td>
+
+                            {% if client.IPhone_Phone %}
+                                <td>{{ client.IPhone_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Main Phone</b></td>
-                            <td>{{ client.Main_Phone }}</td>
+
+                            {% if client.Main_Phone %}
+                                <td>{{ client.Main_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Mobile Phone</b></td>
-                            <td>{{ client.Mobile_Phone }}</td>
+
+                            {% if client.Mobile_Phone %}
+                                <td>{{ client.Mobile_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Mobile Phone 2</b></td>
-                            <td>{{ client.Mobile_Phone2 }}</td>
+
+                            {% if client.Mobile_Phone2 %}
+                                <td>{{ client.Mobile_Phone2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Mobile Phone 3</b></td>
-                            <td>{{ client.Mobile_Phone3 }}</td>
+
+                            {% if client.Mobile_Phone3 %}
+                                <td>{{ client.Mobile_Phone3 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>None Phone</b></td>
-                            <td>{{ client.None_Phone }}</td>
+                            {% if client.None_Phone %}
+                                <td>{{ client.None_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Office Phone</b></td>
-                            <td>{{ client.Office_Phone }}</td>
+
+                            {% if client.Office_Phone %}
+                                <td>{{ client.Office_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Phone</b></td>
-                            <td>{{ client.Other_Phone }}</td>
+
+                            {% if client.Other_Phone %}
+                                <td>{{ client.Other_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Phone 2</b></td>
-                            <td>{{ client.Other_Phone2 }}</td>
+
+                            {% if client.Other_Phone2 %}
+                                <td>{{ client.Other_Phone2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Phone 3</b></td>
-                            <td>{{ client.Other_Phone3 }}</td>
+
+                            {% if client.Other_Phone3 %}
+                                <td>{{ client.Other_Phone3 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Fax Phone</b></td>
-                            <td>{{ client.Other_Fax_Phone }}</td>
+
+                            {% if client.Other_Fax_Phone %}
+                                <td>{{ client.Other_Fax_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Tel Phone</b></td>
-                            <td>{{ client.Tel_Phone }}</td>
+
+                            {% if client.Tel_Phone %}
+                                <td>{{ client.Tel_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Trading Phone</b></td>
-                            <td>{{ client.Trading_Phone }}</td>
+
+                            {% if client.Trading_Phone %}
+                                <td>{{ client.Trading_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work Phone</b></td>
-                            <td>{{ client.Work_Phone }}</td>
+
+                            {% if client.Work_Phone %}
+                                <td>{{ client.Work_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work Phone 2</b></td>
-                            <td>{{ client.Work_Phone2 }}</td>
+
+                            {% if client.Work_Phone2 %}
+                                <td>{{ client.Work_Phone2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work Fax Phone</b></td>
-                            <td>{{ client.Work_Fax_Phone }}</td>
+
+                            {% if client.Work_Fax_Phone %}
+                                <td>{{ client.Work_Fax_Phone }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>Direct Email</b></td>
-                            <td>{{ client.Direct_Email }}</td>
+
+                            {% if client.Direct_Email %}
+                                <td>{{ client.Direct_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Email Email</b></td>
-                            <td>{{ client.Email_Email }}</td>
+
+                            {% if client.Email_Email %}
+                                <td>{{ client.Email_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home Email</b></td>
-                            <td>{{ client.Home_Email }}</td>
+
+                            {% if client.Home_Email %}
+                                <td>{{ client.Home_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>None Email</b></td>
-                            <td>{{ client.None_Email }}</td>
+
+                            {% if client.None_Email %}
+                                <td>{{ client.None_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>None Email2</b></td>
-                            <td>{{ client.None_Email2 }}</td>
+
+                            {% if client.None_Email2 %}
+                                <td>{{ client.None_Email2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Email</b></td>
-                            <td>{{ client.Other_Email }}</td>
+
+                            {% if client.Other_Email %}
+                                <td>{{ client.Other_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other Email2</b></td>
-                            <td>{{ client.Other_Email2 }}</td>
+
+                            {% if client.Other_Email2 %}
+                                <td>{{ client.Other_Email2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Personal Email</b></td>
-                            <td>{{ client.Personal_Email }}</td>
+
+                            {% if client.Personal_Email %}
+                                <td>{{ client.Personal_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>Work Email</b></td>
-                            <td>{{ client.Work_Email }}</td>
+
+                            {% if client.Work_Email %}
+                                <td>{{ client.Work_Email }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td>Work Email(2)</td>
-                            <td>{{ client.Work_Email2 }}</td>
+
+                            {% if client.Work_Email2 %}
+                                <td>{{ client.Work_Email2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td>Work Email(3)</td>
-                            <td>{{ client.Work_Email3 }}</td>
+
+                            {% if client.Work_Email3 %}
+                                <td>{{ client.Work_Email3 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home address</b></td>
-                            <td>{{ client.Home_address }}</td>
+
+                            {% if client.Home_address %}
+                                <td>{{ client.Home_address }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home Street</b></td>
-                            <td>{{ client.Home_Street }}</td>
+
+                            {% if client.Home_Street %}
+                                <td>{{ client.Home_Street }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home City</b></td>
-                            <td>{{ client.Home_City }}</td>
+
+                            {% if client.Home_City %}
+                                <td>{{ client.Home_City }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home ZIP</b></td>
-                            <td>{{ client.Home_ZIP }}</td>
+
+                            {% if client.Home_ZIP %}
+                                <td>{{ client.Home_ZIP }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home State</b></td>
-                            <td>{{ client.Home_State }}</td>
+
+                            {% if client.Home_State %}
+                                <td>{{ client.Home_State }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Home Country</b></td>
-                            <td>{{ client.Home_Country }}</td>
+
+                            {% if client.Home_Country %}
+                                <td>{{ client.Home_Country }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>Other Address</b></td>
-                            <td>{{ client.Other_Address }}</td>
+
+                            {% if client.Other_Address %}
+                                <td>{{ client.Other_Address }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other_Street</b></td>
-                            <td>{{ client.Other_Street }}</td>
+
+                            {% if client.Other_Street %}
+                                <td>{{ client.Other_Street }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other_City</b></td>
-                            <td>{{ client.Other_City }}</td>
+                            {% if client.Other_City %}
+                                <td>{{ client.Other_City }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other_ZIP</b></td>
-                            <td>{{ client.Other_ZIP }}</td>
+
+                            {% if client.Other_ZIP %}
+                                <td>{{ client.Other_ZIP }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Other_State</b></td>
-                            <td>{{ client.Other_State }}</td>
+
+                            {% if client.Other_State %}
+                                <td>{{ client.Other_State }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_Address</b></td>
-                            <td>{{ client.Work_Address }}</td>
+
+                            {% if client.Work_Address %}
+                                <td>{{ client.Work_Address }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_Street</b></td>
-                            <td>{{ client.Work_Street }}</td>
+
+                            {% if client.Work_Street %}
+                                <td>{{ client.Work_Street }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_City</b></td>
-                            <td>{{ client.Work_City }}</td>
+
+                            {% if client.Work_City %}
+                                <td>{{ client.Work_City }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_ZIP</b></td>
-                            <td>{{ client.Work_ZIP }}</td>
+
+                            {% if client.Work_ZIP %}
+                                <td>{{ client.Work_ZIP }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_State</b></td>
-                            <td>{{ client.Work_State }}</td>
+
+                            {% if client.Work_State %}
+                                <td>{{ client.Work_State }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_Country</b></td>
-                            <td>{{ client.Work_Country }}</td>
+
+                            {% if client.Work_Country %}
+                                <td>{{ client.Work_Country }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>Work_Address2</b></td>
-                            <td>{{ client.Work_Address2 }}</td>
+
+                            {% if client.Work_Address2 %}
+                                <td>{{ client.Work_Address2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_Street2</b></td>
-                            <td>{{ client.Work_Street2 }}</td>
+
+                            {% if client.Work_Street2 %}
+                                <td>{{ client.Work_Street2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_City2</b></td>
-                            <td>{{ client.Work_City2 }}</td>
+
+                            {% if client.Work_City2 %}
+                                <td>{{ client.Work_City2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_ZIP2</b></td>
-                            <td>{{ client.Work_ZIP2 }}</td>
+
+                            {% if client.Work_ZIP2 %}
+                                <td>{{ client.Work_ZIP2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_State2</b></td>
-                            <td>{{ client.Work_State2 }}</td>
+
+                            {% if client.Work_State2 %}
+                                <td>{{ client.Work_State2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Work_Country2</b></td>
-                            <td>{{ client.Work_Country2 }}</td>
+
+                            {% if client.Work_Country2 %}
+                                <td>{{ client.Work_Country2 }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Birthday</b></td>
-                            <td>{{ client.Birthday }}</td>
+
+                            {% if client.Birthday %}
+                                <td>{{ client.Birthday }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Note</b></td>
-                            <td>{{ client.Note }}</td>
+                            {% if client.Note %}
+                                <td>{{ client.Note }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
 
 
                         <tr>
                             <td><b>Group</b></td>
-                            <td>{{ client.getGroup }}</td>
+
+                            {% if client.getGroup %}
+                                <td>{{ client.getGroup }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Creation</b></td>
-                            <td>{{ client.Creation }}</td>
+
+                            {% if client.Creation %}
+                                <td>{{ client.Creation }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Modification</b></td>
-                            <td>{{ client.Modification }}</td>
+
+                            {% if client.Modification %}
+                                <td>{{ client.Modification }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>UID</b></td>
-                            <td>{{ client.UID }}</td>
+
+                            {% if client.UID %}
+                                <td>{{ client.UID }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td><b>Contact_Type</b></td>
-                            <td>{{ client.Contact_Type }}</td>
+
+                            {% if client.Contact_Type %}
+                                <td>{{ client.Contact_Type }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
                         </tr>
                         {% if data %}
                             {% for entry in data %}
                                 <tr>
                                     <td><b>{{ entry.field.first.field_name }}</b></td>
-                                    <td>{{ entry.value }}</td>
+                                    {% if entry.value %}
+                                        <td>{{ entry.value }}</td>
+                                    {% else %}
+                                        <td>N/A</td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                         {% endif %}

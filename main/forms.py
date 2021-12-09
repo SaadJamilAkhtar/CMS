@@ -33,7 +33,7 @@ class ExtraFieldForm(forms.Form):
             self.fields[field.field_name] = forms.CharField(widget=forms.TextInput(attrs={
                 'class': 'form-control',
                 'field_id': field.id
-            }))
+            }), required=False)
 
 
 class NewFieldForm(forms.ModelForm):

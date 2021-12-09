@@ -1,6 +1,11 @@
 {% extends "Main.html" %}
+{% load static %}
 {% block title %}
     Dashboard
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'vendors/sweetalert2/sweetalert2.min.css' %}">
 {% endblock %}
 
 
@@ -44,4 +49,29 @@
 
         </section>
     </div>
+{% endblock %}
+
+{% block script %}
+
+    $(document).ready(function () {
+    {% if del %}
+        Swal.fire({
+        icon: "error",
+        title: "Item Deleted"
+        });
+    {% endif %}
+    {% if success %}
+        Swal.fire({
+        icon: "success",
+        title: "Success"
+        });
+    {% endif %}
+    $('select').selectpicker();
+    })
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/extensions/sweetalert2.js' %}"></script>
+    <script src="{% static 'vendors/sweetalert2/sweetalert2.all.min.js' %}"></script>
 {% endblock %}
