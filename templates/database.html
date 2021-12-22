@@ -44,10 +44,9 @@
                         <thead>
                         <tr>
                             <th>Display name</th>
-                            <th>Job</th>
-                            <th>Title</th>
+                            <th>Ethnicity</th>
                             <th>Company</th>
-                            <th>Department</th>
+                            <th>Recommended By</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -56,11 +55,10 @@
                         {% if clients %}
                             {% for client in clients %}
                                 <tr>
-                                    <td><a href="{% url 'client' client.id %}">{{ client.Display_name }}</a></td>
-                                    <td>{{ client.Job }}</td>
-                                    <td>{{ client.Title }}</td>
+                                    <td><a href="{% url 'client' client.id %}">{{ client.First }} {{ client.Last }}</a></td>
+                                    <td>{{ client.Ethnicity }}</td>
                                     <td>{{ client.Company }}</td>
-                                    <td>{{ client.Department }}</td>
+                                    <td>{{ client.Recommendation_By }}</td>
                                     <td><a href="{% url 'edit' client.id %}" class="btn btn-secondary">Edit</a></td>
                                     <td><a onclick="return confirm('Are you sure you want to delete this?')"
                                            href="{% url 'delete' client.id %}" class="btn btn-danger">Delete</a></td>

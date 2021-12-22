@@ -10,3 +10,5 @@ admin.site.register(Group)
 admin.site.register(ExtraFields)
 
 admin.site.register(ConnectedData)
+
+admin.site.register(ImportDataFiles)

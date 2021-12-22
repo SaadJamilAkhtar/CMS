@@ -33,11 +33,32 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" id="formId">
+                            <form class="form" method="post" id="formId" autocomplete="off" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {% for field in form.visible_fields %}
+                                    <div class="row">
+                                        <div class="col-3">{{ field.label_tag }}</div>
+                                        <div class="col-9">{{ field }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <hr>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
                                 {% if form2 %}
-                                    {{ form2.as_p }}
+                                    {% for field in form2.visible_fields %}
+                                        <div class="row">
+                                            <div class="col-3">{{ field.label_tag }}</div>
+                                            <div class="col-9">{{ field }}</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 {% endif %}
                                 <br>
                                 <div class="col-6 d-flex justify-content-end">
@@ -72,6 +93,7 @@
 
 
     $('input').addClass('form-control');
+
     $('#id_Middle').addClass('bg-change');
     $('#id_Prefix').addClass('bg-change');
     $('#id_Suffix').addClass('bg-change');
@@ -111,9 +133,17 @@
     $('#id_Creation').addClass('bg-change');
     $('#id_UID').addClass('bg-change');
 
+    $('#id_In_the_Class').addClass('bg-change');
+    $('#id_FINAL_REC').addClass('bg-change');
+    $('#id_Interview_TARS').addClass('bg-change');
+    $('#id_Yes_Total').addClass('bg-change');
+    $('#id_Total_Avg_TARS').addClass('bg-change');
+    $('#id_Ethnicity').addClass('bg-change');
+    $('#id_CUP_Corp_Partner').addClass('bg-change');
+    $('#id_Introduced_to_CUP_via').addClass('bg-change');
+
     $('textarea').addClass('form-control');
-    $('select').addClass('selectpicker');
-    $('select').attr('data-live-search', 'true');
+
     $('#id_Birthday').get(0).type = 'date';
     $('select').selectpicker();
 

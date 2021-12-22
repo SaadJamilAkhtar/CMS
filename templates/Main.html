@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data BI - {% block title %}{% endblock %}</title>
+    <title>VEM Consulting - {% block title %}{% endblock %}</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
                 <div class="d-flex justify-content-between">
                     <div class="logo">
                         <a href="{% url 'dashboard' %}"><img src="{% static 'images/logo/logo.png' %}" alt="Logo"
-                                                             srcset="" ></a>
+                                                             srcset="" style="width: 100%; height:100%"></a>
                     </div>
                     <div class="toggler">
                         <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -46,6 +46,14 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'report' %}" class='sidebar-link'>
+                            <i class="bi bi-stack"></i>
+                            <span>Report</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item  ">
                         <a href="{% url 'groups' %}" class='sidebar-link'>
                             <i class="bi bi-collection-fill"></i>
@@ -81,6 +89,12 @@
                         <a href="{% url 'apikey' %}" class='sidebar-link'>
                             <i class="bi bi-grid-1x2-fill"></i>
                             <span>API</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'uploadFile' %}" class='sidebar-link'>
+                            <i class="bi bi-cloud-arrow-up-fill"></i>
+                            <span>Upload File</span>
                         </a>
                     </li>
 

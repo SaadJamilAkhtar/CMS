@@ -79,12 +79,27 @@ class Client(models.Model):
     Modification = models.CharField(max_length=500, null=True, blank=True)
     UID = models.CharField(max_length=500, null=True, blank=True)
     Contact_Type = models.CharField(max_length=500, null=True, blank=True)
+    In_the_Class = models.CharField(max_length=500, null=True, blank=True)
+    NO = models.CharField(max_length=500, null=True, blank=True)
+    FINAL_REC = models.CharField(max_length=500, null=True, blank=True)
+    Candidate_Ranking = models.CharField(max_length=500, null=True, blank=True)
+    Interview_TARS = models.CharField(max_length=500, null=True, blank=True)
+    Super_Vote = models.CharField(max_length=500, null=True, blank=True)
+    Yes_Total = models.CharField(max_length=500, null=True, blank=True)
+    Reader_TARS = models.CharField(max_length=500, null=True, blank=True)
+    Total_Avg_TARS = models.CharField(max_length=500, null=True, blank=True)
+    Gender = models.CharField(max_length=500, null=True, blank=True)
+    Ethnicity = models.CharField(max_length=500, null=True, blank=True)
+    Industry = models.CharField(max_length=500, null=True, blank=True)
+    CUP_Corp_Partner = models.CharField(max_length=500, null=True, blank=True)
+    Recommendation_By = models.CharField(max_length=500, null=True, blank=True)
+    Introduced_to_CUP_via = models.CharField(max_length=500, null=True, blank=True)
 
     def getGroup(self):
         return ','.join([grp.name for grp in self.Group.all()])
 
     def __str__(self):
-        return self.Display_name
+        return self.Display_name if self.Display_name else " No Display Name "
 
 
 class APIKEY(models.Model):
@@ -130,3 +145,10 @@ class ConnectedData(models.Model):
 
     class Meta:
         verbose_name_plural = "Connected Data Entries"
+
+
+class ImportDataFiles(models.Model):
+    file = models.FileField(blank=False, null=False, upload_to='assets/uploads/')
+
+    def __str__(self):
+        return self.file.path

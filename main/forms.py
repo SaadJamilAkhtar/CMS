@@ -3,6 +3,15 @@ from .models import *
 
 
 class ClientForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ClientForm, self).__init__(*args, **kwargs)
+        groups = Group.objects.all()
+        self.group_choice = [(grp.id, grp.name) for grp in groups]
+        self.fields['Group'] = forms.MultipleChoiceField(choices=self.group_choice, widget=forms.SelectMultiple(
+            attrs={'class': 'selectpicker',
+                   'data-live-search': 'true'}
+        ), required=False)
+
     class Meta:
         model = Client
         fields = "__all__"
@@ -39,4 +48,10 @@ class ExtraFieldForm(forms.Form):
 class NewFieldForm(forms.ModelForm):
     class Meta:
         model = ExtraFields
+        fields = '__all__'
+
+
+class UploadForm(forms.ModelForm):
+    class Meta:
+        model = ImportDataFiles
         fields = '__all__'

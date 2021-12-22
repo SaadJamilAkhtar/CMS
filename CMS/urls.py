@@ -42,6 +42,8 @@ urlpatterns = [
                   path('fields', showAllFields, name='fields'),
                   path('fields/delete/<int:id>', deleteExtraField, name='del-field'),
 
-                  path('test', form_renderer)
+                  path('test', form_renderer),
+                  path('Reports', TemplateView.as_view(template_name='Report.html'), name="report"),
+                  path('UploadFile', uploadFile, name='uploadFile')
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

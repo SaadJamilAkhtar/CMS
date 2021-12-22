@@ -64,6 +64,15 @@
                             {% endif %}
                         </tr>
                         <tr>
+                            <td><b>Last</b></td>
+
+                            {% if client.Last %}
+                                <td>{{ client.Last }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
                             <td><b>Suffix</b></td>
 
                             {% if client.Suffix %}
@@ -722,6 +731,145 @@
                                 <td>N/A</td>
                             {% endif %}
                         </tr>
+                        {#                        ---------------------------------------#}
+                        <tr>
+                            <td><b>In_the_Class</b></td>
+
+                            {% if client.In_the_Class %}
+                                <td>{{ client.In_the_Class }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>NO</b></td>
+
+                            {% if client.NO %}
+                                <td>{{ client.NO }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>FINAL_REC</b></td>
+
+                            {% if client.FINAL_REC %}
+                                <td>{{ client.FINAL_REC }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Candidate_Ranking</b></td>
+
+                            {% if client.Candidate_Ranking %}
+                                <td>{{ client.Candidate_Ranking }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Interview_TARS</b></td>
+
+                            {% if client.Interview_TARS %}
+                                <td>{{ client.Interview_TARS }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Super_Vote</b></td>
+
+                            {% if client.Super_Vote %}
+                                <td>{{ client.Super_Vote }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Yes_Total</b></td>
+
+                            {% if client.Yes_Total %}
+                                <td>{{ client.Yes_Total }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Reader_TARS</b></td>
+
+                            {% if client.Reader_TARS %}
+                                <td>{{ client.Reader_TARS }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+
+
+                        <tr>
+                            <td><b>Total_Avg_TARS</b></td>
+
+                            {% if client.Total_Avg_TARS %}
+                                <td>{{ client.Total_Avg_TARS }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+
+                        <tr>
+                            <td><b>Gender</b></td>
+
+                            {% if client.Gender %}
+                                <td>{{ client.Gender }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Ethnicity</b></td>
+
+                            {% if client.Ethnicity %}
+                                <td>{{ client.Ethnicity }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Industry</b></td>
+
+                            {% if client.Industry %}
+                                <td>{{ client.Industry }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>CUP_Corp_Partner</b></td>
+
+                            {% if client.CUP_Corp_Partner %}
+                                <td>{{ client.CUP_Corp_Partner }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Recommendation_By</b></td>
+
+                            {% if client.Recommendation_By %}
+                                <td>{{ client.Recommendation_By }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td><b>Introduced_to_CUP_via</b></td>
+
+                            {% if client.Introduced_to_CUP_via %}
+                                <td>{{ client.Introduced_to_CUP_via }}</td>
+                            {% else %}
+                                <td>N/A</td>
+                            {% endif %}
+                        </tr>
                         {% if data %}
                             {% for entry in data %}
                                 <tr>
@@ -738,6 +886,8 @@
 
                         </tbody>
                     </table>
+
+                    <a href="{% url 'dashboard' %}" class="btn btn-lg btn-primary"> Back to Dashboard</a>
                 </div>
             </div>
         </div>
